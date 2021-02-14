@@ -3,36 +3,68 @@ package com.hrullo.examen.persistencia.entidades;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
-//@Entity
-//@Table(name="STARSHIPS")
+@Data
+@Entity
+@Table(name="STARSHIPS")
 public class Starships {
 
-
+	@Id
+	@Column(name = "NAME")
 	private String name;
+	@Column(name = "MODEL")
 	private String model;
+	@Column(name = "MANUFACTURER")
 	private String manufacturer;
-	private int length;
-	private int max_atmosphering_speed;
+	@Column(name = "LENGTH")
+	private String length;
+	@Column(name = "COSTINCREDITS")
+	@JsonProperty("cost_in_credits")
+	private String costInCredits;
+	@Column(name = "MAXATMOSPHERINGSPEED")
+	@JsonProperty("max_atmosphering_speed")
+	private String max_atmospheringspeed;
+	@Column(name = "CREW")
 	private String crew;
-	private int passengers;
-	private int cargo_capacity;
+	@Column(name = "PASSENGERS")
+	private String passengers;
+	@Column(name = "CARGOCAPACITY")
+	@JsonProperty("cargo_capacity")
+	private String cargocapacity;
+	@Column(name = "CONSUMABLES")
 	private String consumables;
-	private String hyperdrive_rating;
-	private int mgl;
-	private String starship_class;
+	@Column(name = "HYPERDRIVERATING")
+	@JsonProperty("hyperdrive_rating")
+	private String hyperdriverating;
+	@Column(name = "MGLT")
+	@JsonProperty("MGLT")
+	private String mglt;
+	@Column(name = "STARSHIPCLASS")
+	@JsonProperty("starship_class")
+	private String starshipclass;
+	@Column(name = "PILOTS")
+	@ElementCollection(targetClass=String.class)
 	private List<String> pilots;
+	@Column(name = "FILMS")
+	@ElementCollection(targetClass=String.class)
 	private List<String> films;
+	@Column(name = "CREATED")
 	private Date created;
+	@Column(name = "EDITED")
 	private Date edited;
-	private String utl;
+	@Column(name = "URL")
+	private String url;
 
 
 }

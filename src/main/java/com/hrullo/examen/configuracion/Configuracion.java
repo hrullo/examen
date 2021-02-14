@@ -4,6 +4,7 @@ import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hrullo.examen.util.UtilsCsv;
@@ -22,6 +23,12 @@ public class Configuracion {
 	public ObjectMapper objectMapper() {
 		
 	return	new ObjectMapper();
+	}
+	
+	@Bean
+	public RestTemplate restTemplate() {
+		
+		return new RestTemplate();
 	}
 	
 

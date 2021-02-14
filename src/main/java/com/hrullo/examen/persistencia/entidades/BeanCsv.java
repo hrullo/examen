@@ -1,15 +1,11 @@
 package com.hrullo.examen.persistencia.entidades;
 
-import java.time.LocalDate;
-import java.util.Date;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import com.opencsv.bean.CsvBindByName;
-
 import lombok.Data;
 
 @Entity
