@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hrullo.examen.configuracion.dominio.PathCsv;
 import com.hrullo.examen.dto.Resumen;
 import com.hrullo.examen.persistencia.entidades.BeanCsv;
 import com.hrullo.examen.service.CsvService;
@@ -25,12 +27,14 @@ public class Controller {
 	@Autowired
 	private CsvService csvService;
 	
+	
+	
 	 @PostMapping("/cargar")
-	   private ResponseEntity<Resumen>  cargar   (@RequestBody String path) {
-	    
-		csvService.ordenarYguardar(path);
+	   private ResponseEntity<Resumen>  cargar   (@RequestBody PathCsv path) {
 		 
-		 return new ResponseEntity<Resumen>(new Resumen(),HttpStatus.OK); 
+		Resumen resumen = 	csvService.ordenarYguardar(path.getPath());
+
+		 return new ResponseEntity<Resumen>(resumen,HttpStatus.OK); 
 	  }
 
 

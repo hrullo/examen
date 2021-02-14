@@ -5,6 +5,7 @@ import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hrullo.examen.util.UtilsCsv;
 import com.opencsv.CSVReader;
 
@@ -15,6 +16,12 @@ public class Configuracion {
 	public UtilsCsv utilCsv() {
 		
 		return new UtilsCsv();
+	}
+	
+	@Bean
+	public ObjectMapper objectMapper() {
+		
+	return	new ObjectMapper();
 	}
 	
 

@@ -46,7 +46,7 @@ public class BeanCsv implements Comparable<BeanCsv>{
 	@Column(name="UNITSSOLD")
 	private float unitsSold;
 	
-	@Column(name="UNITPRINCE")
+	@Column(name="UNITPRICE")
 	private float unitPrice;
 	
 	@Column(name="UNITCOST")
@@ -55,7 +55,7 @@ public class BeanCsv implements Comparable<BeanCsv>{
 	@Column(name = "TOTALREVENUE")
 	private float totalRevenue;
 	
-	@Column(name = "TOTALCOST")
+	@Column(name = "TOTALCOAST")
 	private float totalCost;
 
 	@Column(name = "TOTALPROFIT")
