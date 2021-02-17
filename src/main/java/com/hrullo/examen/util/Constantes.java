@@ -8,4 +8,6 @@ public class Constantes {
 	public static final String [] CAMPOS= {"region","country","salesChannel","orderPriority","orderDate","orderId","shipDate",
             "unitsSold","unitPrice","unitCost", "totalRevenue","totalCost","totalProfit"}; 
 	
+	public static final String GUARDADO_OK="GUARDADO OK";
+	
 }
